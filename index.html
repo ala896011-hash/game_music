@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Музыкальный Баттл — Угадай жанр</title>
+    <title>Музичний Баттл — Вгадай жанр</title>
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
@@ -245,42 +245,42 @@
 <body>
 
     <div class="container">
-        <!-- ЛОББИ -->
+        <!-- ЛОББІ -->
         <div id="lobby-screen" class="screen active">
-            <h1 class="lobby-title">🎵 Музыкальный Баттл</h1>
-            <p class="lobby-subtitle">Введите никнеймы двух игроков для начала соревнования!</p>
+            <h1 class="lobby-title">🎵 Музичний Баттл</h1>
+            <p class="lobby-subtitle">Введіть нікнейми двох гравців для початку змагання!</p>
             
             <div class="players-inputs">
                 <div class="input-group">
-                    <label for="player1-input">ИГРОК 1</label>
-                    <input type="text" id="player1-input" placeholder="Имя игрока 1...">
+                    <label for="player1-input">ГРАВЕЦЬ 1</label>
+                    <input type="text" id="player1-input" placeholder="Ім'я гравця 1...">
                 </div>
                 <div class="input-group">
-                    <label for="player2-input">ИГРОК 2</label>
-                    <input type="text" id="player2-input" placeholder="Имя игрока 2...">
+                    <label for="player2-input">ГРАВЕЦЬ 2</label>
+                    <input type="text" id="player2-input" placeholder="Ім'я гравця 2...">
                 </div>
             </div>
 
-            <button class="btn" id="start-btn">Начать игру</button>
+            <button class="btn" id="start-btn">Розпочати гру</button>
         </div>
 
-        <!-- ИГРОВОЙ ЭКРАН -->
+        <!-- ІГРОВИЙ ЕКРАН -->
         <div id="game-screen" class="screen">
             <div class="game-header">
                 <div class="player-score-card" id="p1-card">
-                    <span id="p1-name-display">Игрок 1</span>: <strong id="p1-score">0</strong> очков
+                    <span id="p1-name-display">Гравець 1</span>: <strong id="p1-score">0</strong> очок
                 </div>
-                <div class="round-counter">Вопрос <span id="current-round">1</span> / 8</div>
+                <div class="round-counter">Запитання <span id="current-round">1</span> / 8</div>
                 <div class="player-score-card" id="p2-card">
-                    <span id="p2-name-display">Игрок 2</span>: <strong id="p2-score">0</strong> очков
+                    <span id="p2-name-display">Гравець 2</span>: <strong id="p2-score">0</strong> очок
                 </div>
             </div>
 
-            <div class="turn-announcement" id="turn-announcement">Ход игрока</div>
+            <div class="turn-announcement" id="turn-announcement">Хід гравця</div>
 
             <div class="audio-section">
-                <p>🎧 Прослушайте отрывок трека (6 секунд) и угадайте его <strong>жанр</strong>:</p>
-                <button class="play-audio-btn" id="play-btn">▶ Воспроизвести отрывок</button>
+                <p>🎧 Прослухайте уривок треку (6 секунд) та вгадайте його <strong>жанр</strong>:</p>
+                <button class="play-audio-btn" id="play-btn">▶ Відтворити уривок</button>
             </div>
 
             <div class="track-reveal" id="track-reveal">
@@ -290,13 +290,13 @@
             <div class="choices-container" id="choices-container"></div>
         </div>
 
-        <!-- ЭКРАН ПОБЕДЫ -->
+        <!-- ЕКРАН ПЕРЕМОГИ -->
         <div id="end-screen" class="screen">
             <div class="winner-screen">
-                <h2 class="winner-title">🏆 Игра окончена!</h2>
-                <div class="winner-name" id="winner-announcement">Победитель</div>
+                <h2 class="winner-title">🏆 Гра закінчена!</h2>
+                <div class="winner-name" id="winner-announcement">Переможець</div>
                 <p id="final-scores-text" style="margin-bottom: 25px; color: #b0b0b0;"></p>
-                <button class="btn" onclick="location.reload()">Играть снова</button>
+                <button class="btn" onclick="location.reload()">Грати знову</button>
             </div>
         </div>
     </div>
@@ -304,18 +304,18 @@
     <script>
         const tracksData = [
             { title: "Dua Lipa – Break My Heart", genre: "Поп / Диско", fileUrl: "audio/track1.mp3" },
-            { title: "Modern Talking – Cheri Cheri Lady", genre: "Евродиско / Ретро", fileUrl: "audio/track2.mp3" },
+            { title: "Modern Talking – Cheri Cheri Lady", genre: "Євродиско / Ретро", fileUrl: "audio/track2.mp3" },
             { title: "Don Omar – Danza Kuduro", genre: "Латина / Реггетон", fileUrl: "audio/track3.mp3" },
-            { title: "Riton x Nightcrawlers – Friday", genre: "Танцевальная электроника", fileUrl: "audio/track4.mp3" },
-            { title: "Gym Class Heroes – Cupid's Chokehold", genre: "Поп-рэп / Хип-хоп", fileUrl: "audio/track5.mp3" },
-            { title: "Tame Impala – The Less I Know The Better", genre: "Инди-рок / Психоделика", fileUrl: "audio/track6.mp3" },
-            { title: "Queen – Another One Bites the Dust", genre: "Классический Рок", fileUrl: "audio/track7.mp3" },
-            { title: "The Weeknd – Blinding Lights", genre: "Синти-поп / R&B", fileUrl: "audio/track8.mp3" }
+            { title: "Riton x Nightcrawlers – Friday", genre: "Танцювальна електроніка", fileUrl: "audio/track4.mp3" },
+            { title: "Gym Class Heroes – Cupid's Chokehold", genre: "Поп-реп / Хіп-хоп", fileUrl: "audio/track5.mp3" },
+            { title: "Tame Impala – The Less I Know The Better", genre: "Інді-рок / Психоделіка", fileUrl: "audio/track6.mp3" },
+            { title: "Queen – Another One Bites the Dust", genre: "Класичний Рок", fileUrl: "audio/track7.mp3" },
+            { title: "The Weeknd – Blinding Lights", genre: "Сінті-поп / R&B", fileUrl: "audio/track8.mp3" }
         ];
 
         let gameState = {
-            player1: "Игрок 1",
-            player2: "Игрок 2",
+            player1: "Гравець 1",
+            player2: "Гравець 2",
             score1: 0,
             score2: 0,
             currentRound: 1,
@@ -368,17 +368,17 @@
             gameState.isAnswered = false;
             trackReveal.style.display = "none";
             currentRoundEl.textContent = gameState.currentRound;
-            playBtn.textContent = "▶ Воспроизвести отрывок";
+            playBtn.textContent = "▶ Відтворити уривок";
             clearTimeout(snippetTimer);
 
             if (gameState.activePlayer === 1) {
                 p1Card.classList.add("active-turn");
                 p2Card.classList.remove("active-turn");
-                turnAnnouncement.textContent = `Ход игрока: ${gameState.player1}`;
+                turnAnnouncement.textContent = `Хід гравця: ${gameState.player1}`;
             } else {
                 p2Card.classList.add("active-turn");
                 p1Card.classList.remove("active-turn");
-                turnAnnouncement.textContent = `Ход игрока: ${gameState.player2}`;
+                turnAnnouncement.textContent = `Хід гравця: ${gameState.player2}`;
             }
 
             const trackIndex = (gameState.currentRound - 1) % tracksData.length;
@@ -400,22 +400,21 @@
                     gameState.audio.play().then(() => {
                         playBtn.textContent = "⏸ Пауза";
                         
-                        // Автоматическая пауза ровно через 6 секунд (отрывок для викторины)
                         clearTimeout(snippetTimer);
                         snippetTimer = setTimeout(() => {
                             if (gameState.audio && !gameState.audio.paused) {
                                 gameState.audio.pause();
-                                playBtn.textContent = "▶ Воспроизвести отрывок";
+                                playBtn.textContent = "▶ Відтворити уривок";
                             }
                         }, 6000);
 
                     }).catch(e => {
-                        console.log("Ошибка воспроизведения:", e);
+                        console.log("Помилка відтворення:", e);
                     });
                 } else {
                     gameState.audio.pause();
                     clearTimeout(snippetTimer);
-                    playBtn.textContent = "▶ Продолжить";
+                    playBtn.textContent = "▶ Продовжити";
                 }
             }
         });
@@ -454,7 +453,7 @@
             if (gameState.audio) {
                 gameState.audio.pause();
                 clearTimeout(snippetTimer);
-                playBtn.textContent = "▶ Воспроизвести отрывок";
+                playBtn.textContent = "▶ Відтворити уривок";
             }
 
             const cards = choicesContainer.querySelectorAll(".choice-card");
@@ -498,15 +497,15 @@
 
             let winnerText = "";
             if (gameState.score1 > gameState.score2) {
-                winnerText = `🏆 Победитель: ${gameState.player1}!`;
+                winnerText = `🏆 Переможець: ${gameState.player1}!`;
             } else if (gameState.score2 > gameState.score1) {
-                winnerText = `🏆 Победитель: ${gameState.player2}!`;
+                winnerText = `🏆 Переможець: ${gameState.player2}!`;
             } else {
-                winnerText = `🤝 Ничья! Отличный результат!`;
+                winnerText = `🤝 Нічия! Чудовий результат!`;
             }
 
             winnerAnnouncement.textContent = winnerText;
-            finalScoresText.textContent = `${gameState.player1}: ${gameState.score1} очков | ${gameState.player2}: ${gameState.score2} очков`;
+            finalScoresText.textContent = `${gameState.player1}: ${gameState.score1} очок | ${gameState.player2}: ${gameState.score2} очок`;
         }
 
         function shuffleArray(array) {
